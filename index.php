@@ -3,6 +3,8 @@
 // Include the config file
 include 'config.php';
 
+session_start();
+print_r($_SESSION);
 // Select all posts from the "posts" table, ordered by the "date" column
 $result = $db->query("SELECT * FROM posts ORDER BY date DESC");
 

@@ -18,14 +18,9 @@ echo "$username\n";
 echo "$password\n";
 echo "$hash_password\n";
 // Insert the post into the "posts" table
-$result = $db->query("SELECT * from users where username='$username' && password='$hash_password'");
-if (mysqli_num_rows($result) == 0)
-   echo "User not found";
+// $result = $db->query("SELECT * from users where username='$username' && password='$hash_password'");
+$result = $db->query("SELECT COUNT(*) from users where username='$username' && password='$hash_password'");
 
-if (array_key_exists("[num_rows] => 0", $result)){
-     echo "User found";
-} else
-   echo "User not found";
 print_r($result);
 print_r(boolval($result));
 
